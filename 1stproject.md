@@ -43,6 +43,8 @@ g<- ggplot(aveSteps, aes(x = interval, y = mean.steps))
 g + geom_line() + 
         labs(y = "Mean number of steps") + labs(x = "Interval")
 ```
+![plot of 2](2.png) 
+
 The largest amount of steps occurs between time intervals 500 and 1000 and The maximum average number of steps is: 206 and occurs in time interval 835
 
 ## Imputing missing values
@@ -80,6 +82,8 @@ newTM <- newActivity %>% group_by(date) %>% summarize(total.steps = sum(steps, n
 g <- ggplot(newTM, aes(x=total.steps))
 g + geom_histogram(binwidth = 2500) +labs(y = "Frequency") + labs(x = "Total steps/day")
 ```
+![plot of 3](3.png) 
+
 The new graph shows that it is similar to the first graph but the first columnd at left has been removed. It shows that filling values with the interval means has increased the frequencies around median.
 
 ```{r}
@@ -108,3 +112,4 @@ head(newInt)
 g <- ggplot (newInt, aes (interval, mean.steps))
 g + geom_line() + facet_grid (day~.) + labs(y = "Number of Steps") + labs(x = "Interval")
 ```
+![plot of 4](4.png) 
