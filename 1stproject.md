@@ -29,6 +29,7 @@ library("ggplot2")
 g <- ggplot(tmSteps, aes(x=total.steps))
 g + geom_histogram(binwidth = 2500) + labs(y = "Frequency") + labs(x = "Total steps/day")
 ```
+1.png
 
 For Calculating the median we use the following formula:
         
